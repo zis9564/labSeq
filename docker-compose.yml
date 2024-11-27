@@ -1,0 +1,11 @@
+services:
+  redis:
+    container_name: redis-labseq
+    image: redis/redis-stack-server:latest
+    volumes:
+      - ./redis_storage:/data/redis
+      - ./redis_storage/redis.conf:/opt/redis-stack/etc/redis-stack.conf
+    command: redis-server /opt/redis-stack/etc/redis-stack.conf --protected-mode no
+    ports:
+      - "6379:6379"
+    restart: always
