@@ -1,5 +1,5 @@
 services:
-  redis:
+  redis-labseq:
     container_name: redis-labseq
     image: redis/redis-stack-server:latest
     volumes:
